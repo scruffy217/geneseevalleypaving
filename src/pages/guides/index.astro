@@ -1,0 +1,28 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const guides = (await getCollection('guides', ({ data }) => import.meta.env.DEV || !data.draft))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+<BaseLayout
+  title="Paving Guides for Rochester, NY Homeowners"
+  description="Straight answers on driveways, sealing, millings and gravel for Rochester and Monroe County, New York. Written by a local Rochester paving crew. Free estimates.">
+  <section class="hero"><Breadcrumbs /><h1>Paving Guides</h1></section>
+  <ul>
+    {guides.length === 0 && <li><p>Guides are on the way.</p></li>}
+    {guides.map((g) => (
+      <li><a href={`/guides/${g.id}/`}>{g.data.title}</a><p>{g.data.description}</p></li>
+    ))}
+  </ul>
+</BaseLayout>
+
+<style>
+  .hero { background: var(--black); color: #fff; padding-bottom: 40px; }
+  .hero h1 { max-width: 1240px; margin: 16px auto 0; padding: 0 16px; font-size: 40px; }
+  ul { list-style: none; max-width: 1240px; margin: 0 auto; padding: 32px 16px 48px; display: grid; gap: 20px; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+  li { background: var(--offwhite); border-radius: 8px; padding: 20px; }
+  li a { color: var(--plum); font-weight: 700; font-size: 20px; text-decoration: none; }
+  li p { margin: 8px 0 0; line-height: 1.5; }
+</style>

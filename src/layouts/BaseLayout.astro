@@ -1,0 +1,69 @@
+---
+// Every page uses this layout. It holds all the head tags in one place.
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;        // meta title, 55 characters max
+  description: string;  // meta description, 155 to 160 characters
+  schema?: object[];    // extra JSON-LD blocks for this page
+  ogType?: string;
+}
+const { title, description, schema = [], ogType = 'website' } = Astro.props;
+
+const site = (Astro.site?.toString() ?? 'https://pavingcompaniesinrochesterny.com/').replace(/\/$/, '');
+const canonical = site + Astro.url.pathname;
+
+// Pre-launch switch. Until PUBLIC_LAUNCHED is set to "true" in Cloudflare,
+// every page says noindex so the preview site never gets into Google.
+const launched = import.meta.env.PUBLIC_LAUNCHED === 'true';
+
+const websiteSchema = Astro.url.pathname === '/'
+  ? [{ '@context': 'https://schema.org', '@type': 'WebSite', name: 'Genesee Valley Paving', url: site + '/' }]
+  : [];
+const allSchema = [...websiteSchema, ...schema];
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {!launched && <meta name="robots" content="noindex, nofollow" />}
+
+    <meta property="og:site_name" content="Genesee Valley Paving" />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="alternate" type="application/rss+xml" title="Genesee Valley Paving Guides" href="/rss.xml" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet" />
+
+    {allSchema.map((s) => <script type="application/ld+json" set:html={JSON.stringify(s)} />)}
+
+    <style is:global>
+      :root {
+        --black: #151515; --panel: #1E1E1E; --lilac: #B79BDB; --amber: #F2B01E;
+        --plum: #7249B0; --text: #1F1F1F; --muted: #C9C9C9; --offwhite: #F6F4F0; --white: #FFFFFF;
+      }
+      body { margin: 0; background: var(--white); color: var(--text); font-family: 'Barlow', system-ui, sans-serif; }
+      h1, h2, h3 { line-height: 1.15; }
+    </style>
+  </head>
+  <body>
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

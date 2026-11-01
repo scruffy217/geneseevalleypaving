@@ -1,0 +1,75 @@
+---
+import { phone, companyLinks, legalLinks, servicesHub, areasHub, costPage, guidesHub } from '../data/site';
+
+// Lean on purpose: the header already links every service and town page,
+// so the footer only carries the hubs, company pages and legal pages.
+const explore = [servicesHub, areasHub, costPage, guidesHub];
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="cols">
+    <div class="brand">
+      <a href="/" aria-label="Genesee Valley Paving home">
+        <img src="/images/logo/genesee-valley-paving-logo-light.svg" width="160" height="80"
+             alt="Genesee Valley Paving" loading="lazy" />
+      </a>
+      <p>Paving company serving Rochester, NY and every town in Monroe County.</p>
+      <a class="phone" href={`tel:${phone.tel}`}>{phone.display}</a>
+      <a class="btn-amber" href="/contact/">Get a Free Estimate</a>
+    </div>
+
+    <nav aria-label="Company">
+      <p class="col-title">Company</p>
+      <ul>{companyLinks.map((l) => <li><a href={l.href}>{l.label}</a></li>)}</ul>
+    </nav>
+
+    <nav aria-label="Explore">
+      <p class="col-title">Explore</p>
+      <ul>{explore.map((l) => <li><a href={l.href}>{l.label}</a></li>)}</ul>
+    </nav>
+  </div>
+
+  <div class="legal">
+    <p>&copy; {year} Genesee Valley Paving</p>
+    <ul>{legalLinks.map((l) => <li><a href={l.href}>{l.label}</a></li>)}</ul>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: #151515; color: #ffffff; font-family: 'Barlow', system-ui, sans-serif;
+    border-top: 3px solid #b79bdb;
+  }
+  .cols {
+    max-width: 1240px; margin: 0 auto; padding: 48px 16px 32px;
+    display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+  }
+  .brand p { color: #c9c9c9; line-height: 1.5; margin: 12px 0 16px; max-width: 34ch; }
+  .brand img { width: 160px; height: 80px; }
+  .phone { display: block; color: #ffffff; font-weight: 700; font-size: 20px; text-decoration: none; margin-bottom: 14px; }
+  .btn-amber {
+    display: inline-block; background: #f2b01e; color: #151515; font-weight: 700;
+    text-decoration: none; padding: 12px 20px; border-radius: 6px;
+  }
+  .col-title {
+    margin: 0 0 14px; font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase; color: #b79bdb;
+  }
+  ul { list-style: none; margin: 0; padding: 0; }
+  li a { display: inline-block; padding: 6px 0; color: #ffffff; text-decoration: none; }
+  li a:hover { color: #f2b01e; }
+  a:focus-visible { outline: 3px solid #f2b01e; outline-offset: 2px; }
+  .legal {
+    max-width: 1240px; margin: 0 auto; padding: 18px 16px 28px; border-top: 1px solid #2c2c2c;
+    display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap;
+    color: #c9c9c9; font-size: 14px;
+  }
+  .legal p { margin: 0; }
+  .legal ul { display: flex; gap: 20px; }
+  .legal a { color: #c9c9c9; }
+  @media (max-width: 760px) {
+    .cols { grid-template-columns: 1fr 1fr; }
+    .brand { grid-column: 1 / -1; }
+  }
+</style>

@@ -1,0 +1,39 @@
+GENESEE VALLEY PAVING: BRAND COLORS
+
+Site: pavingcompaniesinrochesterny.com
+
+Hero, header, footer background: Asphalt black #151515 (white text 18.3 to 1)
+Accent text on black (eyebrows, menu headings, breadcrumb links): Lilac #B79BDB (on black 7.6 to 1)
+CTA buttons (use black button text): Paving amber #F2B01E (on black 9.6 to 1)
+Headings and links on white sections: Plum #7249B0 (on white 6.4 to 1, on off-white 5.8 to 1)
+Body text: Near black #1F1F1F (on off-white 15 to 1)
+Alternating section background: Warm off-white #F6F4F0
+Main background: White #FFFFFF
+Mega menu panel: Dark panel #1E1E1E
+Muted text on black: Light gray #C9C9C9
+
+==================================================
+
+LOGO COLORS
+
+Light logo (on black): back mountains #8A6FB8, front mountains #B79BDB, snow #FFFFFF, trees #659771, road #2E2E2E with white edges, center line #F2B01E, text #FFFFFF and #B79BDB.
+
+Dark logo (on white): back mountains #A88ED1, front mountains #7249B0, snow #FFFFFF, trees #659771, road #151515, center line #F2B01E, text #151515 and #7249B0.
+
+==================================================
+
+CSS VARIABLES
+
+:root {
+  --black: #151515;
+  --panel: #1E1E1E;
+  --lilac: #B79BDB;
+  --amber: #F2B01E;
+  --plum: #7249B0;
+  --text: #1F1F1F;
+  --muted: #C9C9C9;
+  --offwhite: #F6F4F0;
+  --white: #FFFFFF;
+}
+
+Plum changed from #5B3A8C to #7249B0 (2 shades lighter) on Nov 1, 2026.

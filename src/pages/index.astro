@@ -1,0 +1,54 @@
+---
+// Home page (the Rochester page). Hero, intro and CTA row 1 are in.
+// The rest of the sections come from docs/genesee-valley-paving-home-page.md.
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { phone } from '../data/site';
+---
+<BaseLayout
+  title="Paving Company in Rochester, NY | Driveways & Lots"
+  description="Genesee Valley Paving is a Rochester, New York paving company serving Monroe County. Driveways, parking lots, sealing and repairs with free written estimates.">
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <h1>Paving Company in Rochester, NY</h1>
+        <p>We pave, seal and repair driveways and parking lots across Rochester and Monroe County. Every job is built for lake-effect snow, plows and road salt.</p>
+      </div>
+      <div class="hero-form" id="estimate">
+        <!-- CONTACT FORM goes here: Name, Phone, Email, Town, Service, Project box, "Get My Free Estimate" -->
+        <p class="form-title">Get a Free Estimate</p>
+        <p class="form-note">Form placeholder</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="intro">
+    <p>Genesee Valley Paving is a paving company in Rochester, NY that paves, seals and repairs driveways, parking lots and gravel drives across Monroe County.</p>
+    <div class="cta-row">
+      <a class="btn btn-call" href={`tel:${phone.tel}`}>Call {phone.display}</a>
+      <a class="btn btn-amber" href="#estimate">Get a Free Estimate</a>
+    </div>
+  </section>
+
+  <!-- Remaining home page sections: see docs/genesee-valley-paving-home-page.md -->
+</BaseLayout>
+
+<style>
+  .hero { background: var(--black); color: #fff; }
+  .hero-inner { max-width: 1240px; margin: 0 auto; padding: 48px 16px; display: grid; grid-template-columns: 1.3fr 1fr; gap: 40px; align-items: center; }
+  .hero h1 { font-size: 46px; margin: 0 0 16px; }
+  .hero-copy p { color: #d9d9d9; font-size: 19px; line-height: 1.55; margin: 0; max-width: 560px; }
+  .hero-form { background: #fff; color: var(--text); border-radius: 10px; padding: 24px; min-height: 260px; }
+  .form-title { margin: 0 0 8px; font-size: 22px; font-weight: 700; color: var(--plum); }
+  .form-note { color: #777; margin: 0; }
+  .intro { max-width: 1240px; margin: 0 auto; padding: 28px 16px; }
+  .intro p { font-size: 19px; line-height: 1.55; margin: 0 0 18px; }
+  .cta-row { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn { display: inline-block; padding: 16px 26px; border-radius: 8px; font-weight: 700; font-size: 18px; text-decoration: none; }
+  .btn-amber { background: var(--amber); color: var(--black); }
+  .btn-call { background: var(--black); color: #fff; }
+  @media (max-width: 860px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 36px; }
+  }
+</style>

@@ -1,0 +1,240 @@
+---
+import {
+  phone, serviceGroups, servicesHub, costPage,
+  areaGroups, rochesterLink, areasHub,
+} from '../data/site';
+
+const path = Astro.url.pathname;
+const isCurrent = (href: string) => (href === '/' ? path === '/' : path.startsWith(href));
+---
+
+<header class="site-header">
+  <div class="bar">
+    <a class="logo" href="/" aria-label="Genesee Valley Paving home">
+      <img src="/images/logo/genesee-valley-paving-logo-light.svg" width="160" height="80"
+           alt="Genesee Valley Paving" fetchpriority="high" />
+    </a>
+
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+      <span class="bars" aria-hidden="true"></span><span class="menu-word">Menu</span>
+    </button>
+
+    <nav id="primary-nav" class="primary-nav" aria-label="Main">
+      <ul class="nav-list">
+        <li><a class="top-link" href="/" aria-current={path === '/' ? 'page' : undefined}>Home</a></li>
+
+        <li class="has-mega">
+          <div class="top-row">
+            <a class="top-link" href={servicesHub.href} aria-current={isCurrent('/services/') ? 'page' : undefined}>Services</a>
+            <button class="sub-toggle" type="button" aria-expanded="false" aria-controls="mega-services" aria-label="Show services"></button>
+          </div>
+          <div class="mega" id="mega-services">
+            <div class="mega-inner">
+              {serviceGroups.map((g) => (
+                <div class="mega-col">
+                  <p class="mega-title">{g.title}</p>
+                  <ul>
+                    {g.links.map((l) => (
+                      <li><a href={l.href} aria-current={path === l.href ? 'page' : undefined}>{l.label}</a></li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+              <div class="mega-col mega-feature">
+                <p class="mega-title">Planning a Project?</p>
+                <p class="feature-text">See what drives the price of a driveway in Rochester and Monroe County.</p>
+                <a class="feature-link" href={costPage.href}>{costPage.label}</a>
+                <a class="hub-link" href={servicesHub.href}>{servicesHub.label}</a>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="has-mega">
+          <div class="top-row">
+            <a class="top-link" href={areasHub.href} aria-current={isCurrent('/service-areas/') ? 'page' : undefined}>Areas Served</a>
+            <button class="sub-toggle" type="button" aria-expanded="false" aria-controls="mega-areas" aria-label="Show areas served"></button>
+          </div>
+          <div class="mega" id="mega-areas">
+            <div class="mega-inner">
+              <div class="mega-col mega-feature">
+                <p class="mega-title">City of Rochester</p>
+                <p class="feature-text">Every neighborhood, from Charlotte to the South Wedge.</p>
+                <a class="feature-link" href={rochesterLink.href}>{rochesterLink.label}</a>
+                <a class="hub-link" href={areasHub.href}>{areasHub.label}</a>
+              </div>
+              {areaGroups.map((g) => (
+                <div class="mega-col">
+                  <p class="mega-title">{g.title}</p>
+                  <ul>
+                    {g.links.map((l) => (
+                      <li><a href={l.href} aria-current={path === l.href ? 'page' : undefined}>{l.label}</a></li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        </li>
+
+        <li><a class="top-link" href="/contact/" aria-current={isCurrent('/contact/') ? 'page' : undefined}>Contact</a></li>
+        <li><a class="top-link" href="/about/" aria-current={isCurrent('/about/') ? 'page' : undefined}>About</a></li>
+      </ul>
+
+      <div class="bar-cta">
+        <a class="phone" href={`tel:${phone.tel}`}>{phone.display}</a>
+        <a class="btn-amber" href="/contact/">Free Estimate</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    --black: #151515; --panel: #1e1e1e; --line: #2c2c2c;
+    --lilac: #b79bdb; --amber: #f2b01e; --text: #ffffff; --muted: #c9c9c9;
+    background: var(--black); color: var(--text);
+    position: sticky; top: 0; z-index: 50;
+    font-family: 'Barlow', system-ui, sans-serif;
+  }
+  .bar {
+    max-width: 1240px; margin: 0 auto; padding: 0 16px;
+    display: flex; align-items: center; gap: 24px; min-height: 88px; position: relative;
+  }
+  .logo { display: block; flex: 0 0 auto; line-height: 0; }
+  .logo img { width: 160px; height: 80px; }
+
+  .primary-nav { display: flex; align-items: center; flex: 1; justify-content: space-between; }
+  .nav-list { list-style: none; margin: 0; padding: 0; display: flex; align-items: stretch; }
+  .nav-list > li { display: flex; align-items: center; }
+  .top-row { display: flex; align-items: center; height: 100%; }
+  .top-link {
+    display: block; padding: 32px 14px;
+    font-family: 'Barlow Condensed', 'Barlow', sans-serif; font-weight: 600;
+    font-size: 18px; letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--text); text-decoration: none;
+  }
+  .top-link:hover, .top-link[aria-current='page'] { color: var(--lilac); }
+  .top-link[aria-current='page'] { box-shadow: inset 0 -3px 0 var(--lilac); }
+
+  .sub-toggle {
+    width: 28px; height: 28px; margin-left: -8px; border: 0; background: none; cursor: pointer; position: relative;
+  }
+  .sub-toggle::after {
+    content: ''; position: absolute; left: 9px; top: 8px; width: 7px; height: 7px;
+    border-right: 2px solid var(--text); border-bottom: 2px solid var(--text); transform: rotate(45deg);
+  }
+
+  .mega {
+    display: none; position: absolute; left: 0; right: 0; top: 100%;
+    background: var(--panel); border-top: 3px solid var(--lilac);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+  }
+  .has-mega:hover > .mega, .has-mega:focus-within > .mega, .has-mega.open > .mega { display: block; }
+  .mega-inner {
+    max-width: 1240px; margin: 0 auto; padding: 28px 16px 32px;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 28px;
+  }
+  .mega-title {
+    margin: 0 0 12px; font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--lilac);
+  }
+  .mega ul { list-style: none; margin: 0; padding: 0; }
+  .mega li a {
+    display: block; padding: 6px 0; color: var(--text); text-decoration: none; font-size: 16px;
+  }
+  .mega li a:hover, .mega li a[aria-current='page'] { color: var(--amber); }
+  .mega-feature { background: #262626; border-radius: 8px; padding: 18px; }
+  .feature-text { margin: 0 0 14px; color: var(--muted); font-size: 15px; line-height: 1.45; }
+  .feature-link {
+    display: inline-block; margin-bottom: 12px; color: var(--amber); font-weight: 600; text-decoration: none;
+  }
+  .hub-link { display: block; color: var(--text); font-size: 15px; text-decoration: underline; text-underline-offset: 3px; }
+
+  .bar-cta { display: flex; align-items: center; gap: 16px; }
+  .phone { color: var(--text); font-weight: 700; font-size: 18px; text-decoration: none; white-space: nowrap; }
+  .btn-amber {
+    background: var(--amber); color: #151515; font-weight: 700; text-decoration: none;
+    padding: 12px 20px; border-radius: 6px; white-space: nowrap;
+  }
+  .btn-amber:hover { filter: brightness(1.08); }
+
+  a:focus-visible, button:focus-visible { outline: 3px solid var(--amber); outline-offset: 2px; }
+
+  .menu-toggle { display: none; }
+
+  /* Tablet and phone: drawer menu with accordions */
+  @media (max-width: 1100px) {
+    .bar { min-height: 80px; justify-content: space-between; }
+    .logo img { width: 128px; height: 64px; }
+    .menu-toggle {
+      display: flex; align-items: center; gap: 10px; background: none; border: 2px solid #3a3a3a;
+      color: var(--text); padding: 10px 14px; border-radius: 6px; font-weight: 700; cursor: pointer;
+    }
+    .bars, .bars::before, .bars::after {
+      display: block; width: 20px; height: 2px; background: var(--text); position: relative; content: '';
+    }
+    .bars::before { position: absolute; top: -6px; }
+    .bars::after { position: absolute; top: 6px; }
+
+    .primary-nav {
+      display: none; position: absolute; left: 0; right: 0; top: 100%;
+      background: var(--black); border-top: 1px solid var(--line);
+      flex-direction: column; align-items: stretch; max-height: calc(100vh - 80px); overflow-y: auto;
+    }
+    .primary-nav.open { display: flex; }
+    .nav-list { flex-direction: column; }
+    .nav-list > li { display: block; border-bottom: 1px solid var(--line); }
+    .top-row { justify-content: space-between; }
+    .top-link { padding: 16px; }
+    .top-link[aria-current='page'] { box-shadow: inset 3px 0 0 var(--lilac); }
+    .sub-toggle { width: 52px; height: 52px; margin: 0; }
+    .sub-toggle::after { left: 20px; top: 18px; }
+    .has-mega.open .sub-toggle::after { transform: rotate(225deg); top: 24px; }
+
+    .mega { position: static; box-shadow: none; border-top: 0; }
+    .has-mega:hover > .mega, .has-mega:focus-within > .mega { display: none; }
+    .has-mega.open > .mega { display: block; }
+    .mega-inner { grid-template-columns: 1fr 1fr; padding: 8px 16px 20px; gap: 20px; }
+    .mega-feature { grid-column: 1 / -1; }
+    .bar-cta { flex-direction: column; align-items: stretch; padding: 16px; gap: 12px; }
+    .phone, .btn-amber { text-align: center; padding: 14px; }
+    .phone { border: 2px solid #3a3a3a; border-radius: 6px; }
+  }
+  @media (max-width: 420px) {
+    .mega-inner { grid-template-columns: 1fr; }
+  }
+</style>
+
+<script>
+  const header = document.querySelector('.site-header');
+  const nav = header?.querySelector<HTMLElement>('.primary-nav');
+  const menuBtn = header?.querySelector<HTMLButtonElement>('.menu-toggle');
+
+  menuBtn?.addEventListener('click', () => {
+    const open = nav?.classList.toggle('open') ?? false;
+    menuBtn.setAttribute('aria-expanded', String(open));
+  });
+
+  header?.querySelectorAll<HTMLButtonElement>('.sub-toggle').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const li = btn.closest('.has-mega');
+      const open = li?.classList.toggle('open') ?? false;
+      btn.setAttribute('aria-expanded', String(open));
+      header.querySelectorAll('.has-mega.open').forEach((other) => {
+        if (other !== li) {
+          other.classList.remove('open');
+          other.querySelector('.sub-toggle')?.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key !== 'Escape') return;
+    header?.querySelectorAll('.has-mega.open').forEach((li) => {
+      li.classList.remove('open');
+      li.querySelector('.sub-toggle')?.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>

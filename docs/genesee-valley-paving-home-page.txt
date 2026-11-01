@@ -1,0 +1,320 @@
+GENESEE VALLEY PAVING: HOME PAGE COPY
+
+Site: pavingcompaniesinrochesterny.com
+Brand (on site only): Genesee Valley Paving
+
+Placeholder key:
+- [IMAGE: ...] = in-content image. Use real job photos where you can.
+- [CTA ROW: ...] = row of two large buttons.
+- [CONTACT FORM: ...] = lead form.
+- [CONFIRM] = check with the contractor before it goes live.
+- (585) XXX-XXXX = tracking number goes here.
+
+==================================================
+
+SEO
+
+Meta title (50 characters):
+Paving Company in Rochester, NY | Driveways & Lots
+
+Meta description (158 characters):
+Genesee Valley Paving is a Rochester, New York paving company serving Monroe County. Driveways, parking lots, sealing and repairs with free written estimates.
+
+H1:
+Paving Company in Rochester, NY
+
+Head tags (brand):
+- WebSite schema: "name": "Genesee Valley Paving", "url": "https://pavingcompaniesinrochesterny.com/"
+- og:site_name: Genesee Valley Paving
+
+==================================================
+
+HERO SECTION (black background, two columns)
+
+LEFT COLUMN
+
+H1: Paving Company in Rochester, NY
+
+We pave, seal and repair driveways and parking lots across Rochester and Monroe County. Every job is built for lake-effect snow, plows and road salt.
+
+RIGHT COLUMN
+
+[CONTACT FORM: Hero lead form, right of the H1 and paragraph
+- Form heading: Get a Free Estimate
+- Field 1: Name (required)
+- Field 2: Phone (required)
+- Field 3: Email
+- Field 4: Town (dropdown: Rochester plus the 20 Monroe County towns)
+- Field 5: Service (dropdown: the 8 services)
+- Field 6: Tell us about your project (short text box)
+- Submit button: Get My Free Estimate
+- Small line under button: Prefer to talk? Call (585) XXX-XXXX
+- Mobile: form stacks under the H1 and paragraph]
+
+==================================================
+
+INTRO (first line under the hero, above the fold)
+
+Genesee Valley Paving is a paving company in Rochester, NY that paves, seals and repairs driveways, parking lots and gravel drives across Monroe County.
+
+[CTA ROW 1: Above the fold, right under the intro sentence
+- Button 1: Call (585) XXX-XXXX (tel: link)
+- Button 2: Get a Free Estimate (jumps to the hero form on desktop, /contact/ on mobile)]
+
+==================================================
+
+H2: What Does a Paving Company in Rochester, NY Do?
+
+A paving company in Rochester, NY puts down new asphalt, fixes old asphalt and keeps it sealed against our winters. That covers driveways, parking lots, overlays, gravel drives and recycled millings. A good one fixes the base and drainage first, because that is what makes pavement last here.
+
+[IMAGE: Crew rolling fresh asphalt on a Rochester driveway | Alt: New asphalt driveway being rolled in Rochester NY | File: rochester-ny-driveway-paving-crew.webp]
+
+==================================================
+
+H2: Our Paving Services in Rochester
+
+Eight services, one crew. Pick what you need, or call and we'll help you figure it out.
+
+--- CARD 1 ---
+[CARD IMAGE: Freshly paved residential driveway | Alt: Asphalt driveway paving in Rochester NY | File: card-asphalt-driveway-paving.webp]
+
+H3: Asphalt Driveway Paving
+
+A new driveway starts below the surface. We dig out soft spots, set a solid stone base and grade it so water runs off. Then we lay hot mix asphalt and roll it tight. You get a driveway built to stand up to plows, salt and a lot of freeze and thaw.
+
+Link: /services/asphalt-driveway-paving/
+
+--- CARD 2 ---
+[CARD IMAGE: Driveway with a fresh black sealcoat | Alt: Asphalt driveway sealing in Rochester NY | File: card-asphalt-driveway-sealing.webp]
+
+H3: Asphalt Driveway Sealing
+
+Sealcoat keeps water, salt and oil out of your asphalt. We clean the surface, fill the cracks, then put down an even coat. Most driveways need it every few years.
+
+Link: /services/asphalt-driveway-sealing/
+
+--- CARD 3 ---
+[CARD IMAGE: Patched section of a cracked driveway | Alt: Asphalt driveway repair in Rochester NY | File: card-asphalt-driveway-repair.webp]
+
+H3: Asphalt Driveway Repair
+
+Cracks, potholes, sunken spots, broken edges along the lawn. We cut out the bad section, fix what is under it and patch it with hot asphalt so the repair holds.
+
+Link: /services/asphalt-driveway-repair/
+
+--- CARD 4 ---
+[CARD IMAGE: Newly paved commercial lot | Alt: Asphalt parking lot paving in Rochester NY | File: card-asphalt-parking-lot-paving.webp]
+
+H3: Asphalt Parking Lot Paving
+
+New lots and full replacements for shops, offices, churches and apartment buildings, from small lots off Monroe Avenue to plazas out on Ridge Road. We plan the grade and drainage first, so water leaves the lot instead of sitting in it. Line striping is available on request. [CONFIRM striping]
+
+Link: /services/asphalt-parking-lot-paving/
+
+--- CARD 5 ---
+[CARD IMAGE: Parking lot with fresh patches and crack fill | Alt: Asphalt parking lot repair in Rochester NY | File: card-asphalt-parking-lot-repair.webp]
+
+H3: Asphalt Parking Lot Repair
+
+Potholes and spiderweb cracks spread fast, and they're a trip hazard for your customers. We patch, crack fill and fix low spots. We can schedule work around your business hours. [CONFIRM after-hours work]
+
+Link: /services/asphalt-parking-lot-repair/
+
+--- CARD 6 ---
+[CARD IMAGE: Close-up of recycled asphalt millings on a farm road | Alt: Recycled asphalt millings driveway near Rochester NY | File: card-recycled-asphalt-millings.webp]
+
+H3: Recycled Asphalt Millings
+
+Millings are old asphalt ground into a loose, dark material. Spread and rolled, they pack down hard and bind together more over time, especially in summer heat. They cost less than hot mix asphalt, which makes them a smart pick for long driveways, farm roads, camp roads and equipment yards.
+
+Link: /services/recycled-asphalt-millings/
+
+--- CARD 7 ---
+[CARD IMAGE: Freshly graded gravel driveway | Alt: Gravel driveway installation in Rochester NY | File: card-gravel-driveways.webp]
+
+H3: Gravel Driveways
+
+New gravel drives, regrading and repairs. We fix ruts, washouts and potholes. A good gravel driveway starts with a compacted base like Item 4, topped with stone that drains and stays put.
+
+Link: /services/gravel-driveways/
+
+--- CARD 8 ---
+[CARD IMAGE: Overlay going down over an old driveway | Alt: Asphalt resurfacing and overlay in Rochester NY | File: card-asphalt-resurfacing-overlays.webp]
+
+H3: Asphalt Resurfacing and Overlays
+
+If your base is still solid, you may not need a full tear-out. An overlay puts a fresh layer of hot mix over the old surface. It costs less and goes faster than a full replacement. We check the base first and tell you straight if an overlay will hold.
+
+Link: /services/asphalt-resurfacing-overlays/
+
+==================================================
+
+H2: Why Asphalt Breaks Down Faster in Rochester
+
+Rochester sits on the south shore of Lake Ontario, and that means lake-effect snow. More snow means more plowing, and plow blades chew up driveway edges and catch on raised spots.
+
+Then there's salt. Salt melts the ice, but the water it leaves behind soaks into any crack it can find. At night it freezes, expands and pushes the crack wider. Do that all winter and you get the potholes everyone sees in March.
+
+That's why we spend so much time on the part you never see. A firm base, the right slope and a good seal are what keep a Rochester driveway in one piece.
+
+[IMAGE: Winter-damaged driveway edge next to a snowbank | Alt: Winter damage to an asphalt driveway in Rochester NY | File: rochester-winter-driveway-damage.webp]
+
+==================================================
+
+H2: Getting Your Driveway Ready for a Rochester Winter
+
+Fall is when you get ahead of it. Here's what we tell customers before the first plow comes through.
+
+1. Fill cracks before the first freeze. Open cracks are where the water gets in.
+2. Fix potholes and broken edges. Plows catch on them and make them worse.
+3. Seal while it's still warm. Sealcoat needs warm, dry days, so early fall is the last good window.
+4. Mark your edges. Driveway stakes show the plow where the asphalt ends and the lawn starts.
+5. Talk to your plow guy. Ask him to lift the blade a little or use plow shoes, especially on new asphalt.
+
+[IMAGE: Driveway with orange edge stakes before winter | Alt: Driveway marked with snow stakes in Rochester NY | File: rochester-driveway-winter-stakes.webp]
+
+==================================================
+
+H2: Want a Straight Answer on Your Driveway?
+
+We'll come look at it and tell you what it needs, and what it doesn't.
+
+[CTA ROW 2: Middle of the page
+- Button 1: Call (585) XXX-XXXX (tel: link)
+- Button 2: Get a Free Estimate (jumps to the hero form on desktop, /contact/ on mobile)]
+
+==================================================
+
+H2: Paving Across Rochester's Neighborhoods
+
+We work all over the city, on both sides of the Genesee River.
+
+Up north in Charlotte, that means homes near Ontario Beach Park and the old Charlotte-Genesee Lighthouse. Downtown and close in, it's Corn Hill, the South Wedge and the streets around High Falls. On the west side, it's the 19th Ward. On the east side, it's Park Avenue, North Winton Village, the big old houses along East Avenue near the George Eastman Museum, and the streets around Cobbs Hill. On the south side, it's the blocks near Highland Park, where the Lilac Festival packs every curb each May, plus the streets around the University of Rochester and Genesee Valley Park.
+
+A lot of older city homes have narrow driveways squeezed between houses. We look at access before the job starts, so the right size equipment shows up and your neighbor's car isn't in the way.
+
+[IMAGE: Narrow city driveway between two older homes after paving | Alt: City driveway paving in a Rochester NY neighborhood | File: rochester-city-driveway-paving.webp]
+
+==================================================
+
+H2: How a Paving Job Works With Us
+
+1. Walkthrough. We come out, look at the surface, the base and where the water goes.
+2. Written estimate. You get the price and the scope on paper. [CONFIRM]
+3. Scheduling. We give you a date and let you know if weather moves it.
+4. Prep. Old material out, base fixed, grade set.
+5. Paving. Hot mix down, rolled and edged.
+6. Cleanup. We clean up and tell you when it's safe to drive on.
+
+==================================================
+
+H2: How Much Does Paving Cost in Rochester?
+
+It depends on the size of the job, whether the old surface comes out or gets an overlay, how much base work it needs and how easy it is to get equipment in. Millings and gravel cost less than hot mix asphalt.
+
+See our full breakdown on the Asphalt Driveway Cost in Rochester, NY page.
+
+Link: /asphalt-driveway-cost/
+
+==================================================
+
+H2: Recent Paving Jobs in the Rochester Area
+
+[IMAGE: Real job photo 1 | Alt: describe job and town | File: job-01-town-name.webp]
+[IMAGE: Real job photo 2 | Alt: describe job and town | File: job-02-town-name.webp]
+[IMAGE: Real job photo 3 | Alt: describe job and town | File: job-03-town-name.webp]
+[IMAGE: Real job photo 4 | Alt: describe job and town | File: job-04-town-name.webp]
+
+Real jobs only. No stock photos in this section.
+
+==================================================
+
+H2: What Our Customers Say
+
+[REVIEW 1: real review | First name, Town]
+[REVIEW 2: real review | First name, Town]
+[REVIEW 3: real review | First name, Town]
+
+Real reviews only.
+
+==================================================
+
+H2: Serving Rochester and All of Monroe County
+
+We pave in the city of Rochester and every town in Monroe County, from Hamlin on the Lake Ontario shore down to Wheatland and Mendon in the south. Most of the county is a short drive off I-490, I-390, I-590 or Route 104. Pick your town to see local details.
+
+- Brighton: /service-areas/brighton-ny/
+- Chili: /service-areas/chili-ny/
+- Clarkson: /service-areas/clarkson-ny/
+- East Rochester: /service-areas/east-rochester-ny/
+- Gates: /service-areas/gates-ny/
+- Greece: /service-areas/greece-ny/
+- Hamlin: /service-areas/hamlin-ny/
+- Henrietta: /service-areas/henrietta-ny/
+- Irondequoit: /service-areas/irondequoit-ny/
+- Mendon: /service-areas/mendon-ny/
+- Ogden: /service-areas/ogden-ny/
+- Parma: /service-areas/parma-ny/
+- Penfield: /service-areas/penfield-ny/
+- Perinton: /service-areas/perinton-ny/
+- Pittsford: /service-areas/pittsford-ny/
+- Riga: /service-areas/riga-ny/
+- Rush: /service-areas/rush-ny/
+- Sweden: /service-areas/sweden-ny/
+- Webster: /service-areas/webster-ny/
+- Wheatland: /service-areas/wheatland-ny/
+
+==================================================
+
+H2: Rochester Paving Questions We Hear a Lot
+
+H3: When is paving season in Rochester?
+Hot mix asphalt needs warm, dry weather to go down right. Most paving happens from spring through late fall. Once the cold settles in for good, hot mix cools too fast to pack down right, and the season ends until spring. The calendar fills up, so call early.
+
+H3: Does road salt hurt my driveway?
+Salt doesn't eat asphalt directly. The problem is the water it leaves behind. Salty meltwater runs into cracks, freezes at night and pushes them wider. It also wears down sealcoat faster. Keeping cracks filled and the surface sealed is the best defense.
+
+H3: How do I protect a new driveway from snowplows?
+Mark the edges with stakes before the first storm. Ask your plow service to lift the blade a little or use plow shoes the first winter. Try not to pile heavy snowbanks on the edges, since that's where new asphalt is softest.
+
+H3: When is it too cold to sealcoat?
+Sealcoat needs warm, dry days to cure. Most sealer makers call for at least 50 degrees and rising, with no rain coming. In Rochester, that usually means late spring through early fall.
+
+H3: How long before I can drive on my new driveway?
+Usually about three days for a car. Wait longer for heavy trucks, and longer in hot weather. Try not to turn your wheels while the car is sitting still. That scuffs soft asphalt.
+
+H3: When should I sealcoat a new driveway?
+New asphalt needs time to cure first. We usually suggest waiting six months to a year before the first seal.
+
+H3: Do I need a full replacement or just an overlay?
+It comes down to the base. If the base is solid and the cracks are on the surface, an overlay can work. If the driveway is sinking, heaving or breaking apart in chunks, the base has failed and it needs to come out.
+
+H3: Do I need a permit to pave my driveway?
+It depends on the work and where you live. Rules in the City of Rochester can be different from the rules in Greece, Pittsford or Webster. We check with the city or your town before the job starts. [CONFIRM contractor handles permits]
+
+H3: Are recycled millings a good choice?
+For long drives, farm roads and tight budgets, yes. They make a lot of sense in the rural parts of the county, like Riga, Rush and Wheatland. They cost less and get firmer over time. They won't look as smooth or finished as hot mix asphalt.
+
+H3: Do you work in the city or just the suburbs?
+Both. We pave downtown near High Falls and The Strong National Museum of Play, out to the lake in Charlotte, and in every town in Monroe County.
+
+H3: Do you work on gravel driveways too?
+Yes. New installs, regrading, and fixing ruts, washouts and potholes.
+
+==================================================
+
+H2: Ready for a Free Estimate?
+
+Tell us about your driveway, parking lot or gravel road. We'll come take a look and give you a straight answer.
+
+[CTA ROW 3: Bottom of the page
+- Button 1: Call (585) XXX-XXXX (tel: link)
+- Button 2: Get a Free Estimate (jumps to the hero form on desktop, /contact/ on mobile)]
+
+==================================================
+
+FOOTER
+
+Genesee Valley Paving
+Paving company serving Rochester, NY and Monroe County
+(585) XXX-XXXX

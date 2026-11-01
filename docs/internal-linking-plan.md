@@ -1,0 +1,198 @@
+# Genesee Valley Paving: Navigation and Internal Linking Plan
+
+Site: pavingcompaniesinrochesterny.com
+
+---
+
+## 1. The Result
+
+- **36 pages total.** Home, 8 service pages, services hub, areas hub, 20 town pages, cost page, About, Contact, Privacy, Terms.
+- **Every page is 1 hop from every other page.** The header mega menu and footer link all 36 pages on every page. That's the shortest possible.
+- **Zero orphans.** Checked by script against the built page.
+- **49 links in the header and footer, 36 unique URLs.** Well under the old 100-links-per-page guideline, even after body links are added.
+
+**Correction: Monroe County has 20 towns, not 19.** East Rochester has been a town and a village with the same borders since 1981. It's now in the menu (East Side group), the home page service area list and the form dropdown.
+
+---
+
+## 2. Page List
+
+| Type | Count | URLs |
+|---|---|---|
+| Home (Rochester page) | 1 | / |
+| Services hub | 1 | /services/ |
+| Service pages | 8 | /services/asphalt-driveway-paving/, /services/asphalt-driveway-sealing/, /services/asphalt-driveway-repair/, /services/asphalt-resurfacing-overlays/, /services/asphalt-parking-lot-paving/, /services/asphalt-parking-lot-repair/, /services/recycled-asphalt-millings/, /services/gravel-driveways/ |
+| Areas hub | 1 | /service-areas/ |
+| Town pages | 20 | /service-areas/{town}-ny/ (East Rochester is /service-areas/east-rochester-ny/) |
+| Cost page | 1 | /asphalt-driveway-cost/ |
+| Company | 2 | /about/, /contact/ |
+| Legal | 2 | /privacy/, /terms/ |
+
+---
+
+## 3. Header (Nav Bar)
+
+Order: **HOME, SERVICES, AREAS SERVED, CONTACT, ABOUT**, then phone and Free Estimate button on the right.
+
+**SERVICES mega menu**
+- Driveways: Asphalt Driveway Paving, Asphalt Driveway Sealing, Asphalt Driveway Repair, Resurfacing and Overlays
+- Parking Lots: Parking Lot Paving, Parking Lot Repair
+- Lower Cost Options: Recycled Asphalt Millings, Gravel Driveways
+- Feature box: Asphalt Driveway Cost in Rochester, All Paving Services (hub)
+
+**AREAS SERVED mega menu**
+- City of Rochester box: "Rochester, NY" links to the home page, plus All Areas We Serve (hub)
+- Lake Ontario Shore: Greece, Hamlin, Irondequoit, Parma, Webster
+- West Side: Chili, Clarkson, Gates, Ogden, Riga, Sweden
+- East Side: Brighton, East Rochester, Penfield, Perinton, Pittsford
+- South Side: Henrietta, Mendon, Rush, Wheatland
+
+---
+
+## 4. Footer
+
+Kept lean on purpose. It does not repeat the services or towns.
+
+- Brand column: logo, one line about the service area, phone, Get a Free Estimate button
+- Company: Home, About, Contact
+- Explore: All Paving Services, All Areas We Serve, Asphalt Driveway Cost in Rochester
+- Bottom bar: copyright, Privacy Policy, Terms
+
+---
+
+## 5. Link Equity Rules Built In
+
+1. **Real HTML links only.** The mega menu is hidden with CSS, not built with JavaScript, so Google sees every link.
+2. **No nofollow on internal links.** Nofollow doesn't save equity. It throws it away.
+3. **No repeat link blocks.** The footer does not copy the mega menu.
+4. **Legal pages in the footer only.**
+5. **No outside links in the header or footer.**
+6. **Phone links don't count.** tel: links aren't pages.
+
+Google doesn't publish exactly how it splits equity between links. These rules follow what's known to work.
+
+---
+
+## 6. The Full Loop
+
+1. **Home:** all 8 service cards, all 20 towns in the service area grid, cost page.
+2. **Hubs down:** services hub links all 8 services. Areas hub links all 20 towns plus "Rochester, NY" to home.
+3. **Spokes up:** every service and town page links up to its hub through breadcrumbs.
+4. **Town to town:** every town links to **all** of its in-county neighbors from Table A. Borders work both ways, so every link gets a link back automatically.
+5. **Town to service:** every town links to the services in its row of Table A, plus Asphalt Driveway Paving if it isn't there already.
+6. **Service to service:** only the pairs in Table C, each inside a sentence that gives the reason.
+7. **Service to town:** each service links the 6 towns in Table B, plus the areas hub.
+8. **Everything to home:** every page links home at least once in the body, with varied anchor text. Towns that border the city say so: "right next door to Rochester."
+9. **Cost page:** links all 8 services and home.
+
+---
+
+## 7. Table A: Town Borders and Town Page Links
+
+Borders come from each town's geography section on Wikipedia. Only towns inside Monroe County are listed. Towns in other counties (Victor, Walworth, Le Roy and so on) don't have pages, so they're left out.
+
+| Town page | Links to these neighbors (both ways) | Borders the city of Rochester | Services that link in (link back to these) |
+|---|---|---|---|
+| Brighton | Henrietta, Irondequoit, Penfield, Pittsford | Yes | Driveway Sealing, Parking Lot Paving |
+| Chili | Gates, Henrietta, Ogden, Riga, Wheatland | Yes | Driveway Paving, Resurfacing and Overlays, Parking Lot Repair |
+| Clarkson | Hamlin, Parma, Sweden | No | Recycled Millings, Gravel Driveways |
+| East Rochester | Perinton, Pittsford | No | Driveway Sealing, Driveway Repair |
+| Gates | Chili, Greece, Ogden | Yes | Driveway Sealing, Driveway Repair, Parking Lot Paving |
+| Greece | Gates, Ogden, Parma | Yes | Driveway Paving, Driveway Repair, Parking Lot Paving, Parking Lot Repair |
+| Hamlin | Clarkson, Parma | No | Recycled Millings, Gravel Driveways |
+| Henrietta | Brighton, Chili, Mendon, Pittsford, Rush, Wheatland | No | Driveway Repair, Parking Lot Paving, Parking Lot Repair |
+| Irondequoit | Brighton, Penfield, Webster | Yes | Driveway Sealing, Driveway Repair, Parking Lot Repair |
+| Mendon | Henrietta, Pittsford, Rush | No | Recycled Millings, Gravel Driveways |
+| Ogden | Chili, Gates, Greece, Parma, Riga, Sweden | No | Driveway Sealing, Resurfacing and Overlays |
+| Parma | Clarkson, Greece, Hamlin, Ogden, Sweden | No | Driveway Repair, Resurfacing and Overlays |
+| Penfield | Brighton, Irondequoit, Perinton, Pittsford, Webster | No | Driveway Paving, Driveway Sealing |
+| Perinton | East Rochester, Penfield, Pittsford | No | Driveway Paving, Resurfacing and Overlays, Parking Lot Paving |
+| Pittsford | Brighton, East Rochester, Henrietta, Mendon, Penfield, Perinton | No | Driveway Paving, Resurfacing and Overlays, Parking Lot Repair |
+| Riga | Chili, Ogden, Wheatland | No | Recycled Millings, Gravel Driveways |
+| Rush | Henrietta, Mendon, Wheatland | No | Recycled Millings, Gravel Driveways |
+| Sweden | Clarkson, Ogden, Parma | No | Resurfacing and Overlays, Parking Lot Repair |
+| Webster | Irondequoit, Penfield | No | Driveway Paving, Parking Lot Paving |
+| Wheatland | Chili, Henrietta, Riga, Rush | No | Recycled Millings, Gravel Driveways |
+
+Notes:
+- Henrietta's page says the city of Rochester is north of it but does not share a border. Don't write that Henrietta borders the city.
+- Brighton's page lists Chili across the Genesee River, but Chili's page doesn't list Brighton. I left that pair out to be safe.
+- Every town has at least 2 neighbors and at least 2 service pages linking in.
+
+---
+
+## 8. Table B: Service to Town Links
+
+Each service page links these 6 towns, plus the areas hub. Every town gets at least 2 service links.
+
+| Service page | Links to these towns | Why these towns |
+|---|---|---|
+| Asphalt Driveway Paving | Chili, Greece, Penfield, Perinton, Pittsford, Webster | Suburban home driveways |
+| Asphalt Driveway Sealing | Brighton, East Rochester, Gates, Irondequoit, Ogden, Penfield | Established neighborhoods with older driveways to protect |
+| Asphalt Driveway Repair | East Rochester, Gates, Greece, Henrietta, Irondequoit, Parma | Older driveways that need fixing |
+| Resurfacing and Overlays | Chili, Ogden, Parma, Perinton, Pittsford, Sweden | Driveways with a solid base worth saving |
+| Parking Lot Paving | Brighton, Gates, Greece, Henrietta, Perinton, Webster | Towns with busy retail areas, like Jefferson Road in Henrietta and Ridge Road in Greece |
+| Parking Lot Repair | Chili, Greece, Henrietta, Irondequoit, Pittsford, Sweden | Commercial lots that take heavy traffic |
+| Recycled Asphalt Millings | Clarkson, Hamlin, Mendon, Riga, Rush, Wheatland | Rural towns with long drives and farm roads |
+| Gravel Driveways | Clarkson, Hamlin, Mendon, Riga, Rush, Wheatland | Rural towns with long drives and farm roads |
+
+---
+
+## 9. Table C: Service to Service Links
+
+Only where a real customer would go from one to the other. The sentence around the link gives the reason.
+
+| From | Links to | The reason in the sentence |
+|---|---|---|
+| Driveway Paving | Driveway Sealing | New asphalt gets its first seal after 6 to 12 months |
+| Driveway Paving | Resurfacing and Overlays | Replace or overlay? Depends on the base |
+| Driveway Paving | Recycled Millings | Lower cost option for long drives |
+| Driveway Sealing | Driveway Repair | Cracks and holes get fixed before sealing |
+| Driveway Sealing | Driveway Paving | When a driveway is too far gone to seal |
+| Driveway Repair | Resurfacing and Overlays | When patching isn't enough anymore |
+| Driveway Repair | Driveway Sealing | Seal after repairs to protect them |
+| Resurfacing and Overlays | Driveway Paving | When the base has failed and it needs a full redo |
+| Resurfacing and Overlays | Driveway Repair | Fixing bad spots before the overlay goes down |
+| Parking Lot Paving | Parking Lot Repair | Keeping a new lot in shape |
+| Parking Lot Repair | Parking Lot Paving | When a lot needs full replacement |
+| Parking Lot Repair | Resurfacing and Overlays | Overlays work on lots too |
+| Recycled Millings | Gravel Driveways | Both are lower cost; millings can go over a gravel base |
+| Recycled Millings | Driveway Paving | Compared to hot mix asphalt |
+| Gravel Driveways | Recycled Millings | A step up that packs harder than stone |
+| Gravel Driveways | Driveway Paving | Upgrading gravel to asphalt |
+
+Left out on purpose: pairs with no customer reason, like Driveway Sealing to Parking Lot Paving.
+
+---
+
+## 10. Breadcrumbs
+
+Built as `src/components/Breadcrumbs.astro`. Place it at the top of the black hero on every inner page. It starts at Home, every step before the current page is a clickable link, the current page is plain text marked `aria-current="page"`, and it writes matching BreadcrumbList schema. It shows nothing on the home page.
+
+Examples:
+- Home > Services > Asphalt Driveway Paving
+- Home > Areas Served > East Rochester, NY
+- Home > Asphalt Driveway Cost
+
+---
+
+## 11. XML Sitemap and Orphan Check
+
+1. Add the official Astro sitemap integration: `npx astro add sitemap`, and set `site: 'https://pavingcompaniesinrochesterny.com'` and `trailingSlash: 'always'` in astro.config.mjs.
+2. Every page is listed in `allPages` in `src/data/site.ts`. Add new pages there and to the menu data.
+3. Before launch, crawl the built site with Screaming Frog (free up to 500 URLs). Check: no orphans, no 404s, every page at crawl depth 1.
+
+---
+
+## 12. Files
+
+- `src/data/site.ts`: every link on the site, now with East Rochester.
+- `src/components/Header.astro`: nav bar and both mega menus.
+- `src/components/Footer.astro`: lean footer.
+- `src/components/Breadcrumbs.astro`: active breadcrumbs with schema.
+
+---
+
+## Sources for town borders
+
+Wikipedia geography sections for each town: Brighton, Chili, East Rochester, Gates, Greece, Hamlin, Henrietta, Irondequoit, Mendon, Ogden, Parma, Penfield, Perinton, Pittsford, Riga, Rush, Sweden, Webster, Wheatland (Clarkson's borders come from the Hamlin, Parma and Sweden pages). Town count: New York Family History, Monroe County cities, towns and villages.

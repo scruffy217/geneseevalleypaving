@@ -1,0 +1,92 @@
+---
+// Active breadcrumbs: Home > Hub > Current page.
+// Every step before the current page is a clickable link.
+// Builds the trail from the URL and the labels in site.ts,
+// and writes BreadcrumbList schema to match.
+import {
+  serviceGroups, servicesHub, areaGroups, areasHub,
+  costPage, companyLinks, legalLinks, guidesHub,
+} from '../data/site';
+
+const SITE = (Astro.site?.toString() ?? 'https://pavingcompaniesinrochesterny.com/').replace(/\/$/, '');
+
+const labels = new Map<string, string>([
+  [servicesHub.href, 'Services'],
+  [areasHub.href, 'Areas Served'],
+  [costPage.href, 'Asphalt Driveway Cost'],
+  [guidesHub.href, 'Guides'],
+  ...serviceGroups.flatMap((g) => g.links.map((l) => [l.href, l.label] as [string, string])),
+  ...areaGroups.flatMap((g) => g.links.map((l) => [l.href, `${l.label}, NY`] as [string, string])),
+  ...companyLinks.filter((l) => l.href !== '/').map((l) => [l.href, l.label] as [string, string]),
+  ...legalLinks.map((l) => [l.href, l.label] as [string, string]),
+]);
+
+// Optional override for a page whose label isn't in site.ts
+interface Props { current?: string }
+const { current } = Astro.props;
+
+let path = Astro.url.pathname;
+if (!path.endsWith('/')) path += '/';
+
+const parts = path.split('/').filter(Boolean);
+const trail: { label: string; href: string }[] = [{ label: 'Home', href: '/' }];
+let built = '/';
+for (const part of parts) {
+  built += part + '/';
+  const label = labels.get(built);
+  if (label) trail.push({ label, href: built });
+}
+if (current) {
+  // Pages not in site.ts (like a single guide) pass their own title as the last step.
+  if (trail[trail.length - 1].href === path) trail[trail.length - 1].label = current;
+  else trail.push({ label: current, href: path });
+}
+
+const show = trail.length > 1; // no breadcrumbs on the home page
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: trail.map((t, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: t.label,
+    item: SITE + t.href,
+  })),
+};
+---
+
+{show && (
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+      {trail.map((t, i) => (
+        <li>
+          {i < trail.length - 1
+            ? <a href={t.href}>{t.label}</a>
+            : <span aria-current="page">{t.label}</span>}
+        </li>
+      ))}
+    </ol>
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </nav>
+)}
+
+<style>
+  .breadcrumbs {
+    max-width: 1240px; margin: 0 auto; padding: 14px 16px 0;
+    font-family: 'Barlow', system-ui, sans-serif; font-size: 15px;
+  }
+  ol { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: center; }
+  li { display: flex; align-items: center; color: #d9d9d9; }
+  li + li::before {
+    content: ''; width: 6px; height: 6px; margin: 0 12px 0 10px;
+    border-top: 2px solid #8a8a8a; border-right: 2px solid #8a8a8a; transform: rotate(45deg);
+  }
+  a {
+    color: #b79bdb; text-decoration: underline; text-underline-offset: 3px;
+    padding: 6px 0; /* bigger tap target on phones */
+  }
+  a:hover { color: #f2b01e; }
+  a:focus-visible { outline: 3px solid #f2b01e; outline-offset: 2px; }
+  [aria-current='page'] { color: #ffffff; font-weight: 600; }
+</style>
