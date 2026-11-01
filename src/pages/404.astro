@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { phone } from '../data/site';
+---
+<BaseLayout
+  title="Page Not Found | Genesee Valley Paving"
+  description="That page isn't here. Find paving, sealing and repair services for Rochester and Monroe County, New York, or call Genesee Valley Paving for a free estimate.">
+  <section class="nf">
+    <h1>That page isn't here</h1>
+    <p>The link may be old, or the address may have a typo.</p>
+    <p><a href="/">Go to the home page</a>, see our <a href="/services/">paving services</a>, or call <a href={`tel:${phone.tel}`}>{phone.display}</a>.</p>
+  </section>
+</BaseLayout>
+
+<style>
+  .nf { max-width: 820px; margin: 0 auto; padding: 64px 16px; font-size: 19px; line-height: 1.6; }
+  .nf h1 { color: var(--plum); font-size: 40px; margin: 0 0 16px; }
+  .nf a { color: var(--plum); font-weight: 700; }
+</style>

@@ -1,0 +1,10 @@
+// Cloudflare Workers settings for a static Astro site.
+// "npm run build" makes the dist folder, then "npx wrangler deploy" serves it.
+{
+  "name": "geneseevalleypaving",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "404-page"
+  }
+}
