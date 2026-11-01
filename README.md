@@ -1,6 +1,6 @@
 # Genesee Valley Paving
 
-Lead gen site for pavingcompaniesinrochesterny.com. Astro, static HTML, hosted on Cloudflare Pages.
+Lead gen site for pavingcompaniesinrochesterny.com. Astro, static HTML, hosted on Cloudflare Workers (static assets).
 
 ## Run it on your computer
 
@@ -11,22 +11,24 @@ Lead gen site for pavingcompaniesinrochesterny.com. Astro, static HTML, hosted o
 
 DONE WHEN: the home page loads in your browser.
 
-## Cloudflare Pages settings
+## Cloudflare settings (Workers, connected to this repo)
 
-1. Cloudflare dashboard, Workers & Pages, Create, connect to Git, pick `scruffy217/geneseevalleypaving`.
-2. Framework preset: Astro
-3. Build command: `npm run build`
-4. Build output folder: `dist`
-5. Leave `PUBLIC_LAUNCHED` unset for now. Every page says noindex until launch.
+1. Build command: `npm run build`
+2. Deploy command: `npx wrangler deploy`
+3. `wrangler.jsonc` tells Cloudflare to serve the `dist` folder, with `404.html` for missing pages.
+4. Every push to `main` rebuilds and redeploys the site.
+5. Preview address: https://geneseevalleypaving.vpasphaltpaving.workers.dev
+6. Leave `PUBLIC_LAUNCHED` unset for now. Every page says noindex until launch.
 
 ## Launch checklist
 
 1. All pages built and every [CONFIRM] tag cleared.
 2. Real tracking number in `src/data/site.ts` (`phone`).
-3. In Cloudflare, Settings, Variables: add `PUBLIC_LAUNCHED` = `true`, then redeploy. This removes the noindex tag.
+3. In the Cloudflare project's settings, add a **build** variable `PUBLIC_LAUNCHED` = `true`, then redeploy. This removes the noindex tag. (It must be a build variable, because Astro reads it while building.)
 4. Add the custom domain pavingcompaniesinrochesterny.com.
-5. Submit `https://pavingcompaniesinrochesterny.com/sitemap-index.xml` in Google Search Console.
-6. Crawl with Screaming Frog: no orphans, no 404s, every page at crawl depth 1.
+5. Once the custom domain works, add `"workers_dev": false` and `"preview_urls": false` to `wrangler.jsonc` and push, so the workers.dev copy of the site goes away and can't compete with the real domain.
+6. Submit `https://pavingcompaniesinrochesterny.com/sitemap-index.xml` in Google Search Console.
+7. Crawl with Screaming Frog: no orphans, no 404s, every page at crawl depth 1.
 
 ## Folders
 
